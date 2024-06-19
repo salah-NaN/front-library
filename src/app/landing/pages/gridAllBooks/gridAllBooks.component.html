@@ -1,0 +1,20 @@
+<!-- <app-book-card
+  title="Can't hurt me"
+  [year]="2018"
+  [imageName]="3"
+  author="David Goggins"
+/> -->
+<div class="grid grid-cols-3 gap-10 mx-auto w-[89%] mt-24">
+  @for (e of mapped(); track $index) {
+  <app-book-card
+    [title]="e.book.title"
+    [imageName]="e.book.id"
+    [year]="e.book.year"
+    [author]="e.book.author.name"
+    [available]="e.available"
+  />
+
+  } @empty {
+  <p>Loading books...</p>
+  }
+</div>

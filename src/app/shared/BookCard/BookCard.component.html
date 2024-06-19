@@ -1,0 +1,33 @@
+<div
+  [class]="{
+    'bg-[#bebec5]': !available
+  }"
+  class="flex flex-col px-5 py-4 rounded-xl border border-[#2d2d2e] bg-[#e9ecee]"
+>
+  <!-- image -->
+  <img
+    class="w-full rounded-md object-cover h-96"
+    [srcset]="'../../assets/' + imageName + '.png'"
+  />
+  <!-- title -->
+  <!-- && -->
+  <!-- year -->
+  <div class="flex flex-col mt-1.5 mb-1">
+    <h3 class="text-xl text-[#494c4d] font-medium truncate">
+      {{ title }}
+    </h3>
+    <p class="text-sm text-[#56595b]">{{ year }}</p>
+  </div>
+  <!-- author -->
+  <!-- && -->
+  <!-- delete btn -->
+  <div class="flex justify-between items-center">
+    <p class="text-[15px] italic truncate">{{ author }}</p>
+    <button
+      (click)="deleteBook(imageName)"
+      class="bg-red-400 text-[#fafafa] px-2 py-1 hover:shadow-md rounded-md"
+    >
+      Delete
+    </button>
+  </div>
+</div>
